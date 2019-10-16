@@ -43,7 +43,11 @@ example:
 
 3、进入到项目根路径
 
-4、执行 ./reporter.sh
+4、执行 ./reporter.sh -repo git仓库1绝对路径,git仓库2绝对路径, ... ,git仓库n绝对路径
 
 5、根据提示生成日报/周报
 ```
+
+# 技巧
+将`-repo`的参数值设置到环境变量中(`/etc/profile` | `~/.bash_profile`)
+就可以实现如演示GIF的效果
