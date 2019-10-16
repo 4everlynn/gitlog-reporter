@@ -4,6 +4,8 @@
 ![](https://img.shields.io/badge/generator-blue)
 ![](https://img.shields.io/badge/git-based-red)
 
+![](./reporter.gif)
+
 ## Commit format
 
 format
@@ -32,16 +34,6 @@ example:
     b、修复数据不正确问题
     c、新增根据因子组查询功能
 ```
-
-# 机型兼容
-|Device|Version|  
-|:-:|:-:|  
-|Mac OS|ALL|
-|CentOS|7+|
-
-# 计划兼容
-`Windows 10`
-
 
 # 使用步骤
 ```text
