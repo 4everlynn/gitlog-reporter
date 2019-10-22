@@ -1,6 +1,5 @@
 # Git Reporter generator
 
-[![Build Status](https://www.travis-ci.org/4everlynn/gitlog-reporter.svg?branch=master)](https://www.travis-ci.org/4everlynn/gitlog-reporter)
 ![](https://img.shields.io/badge/author-4everlynn-orange)
 ![](https://img.shields.io/badge/generator-blue)
 ![](https://img.shields.io/badge/git-based-red)

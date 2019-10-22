@@ -41,6 +41,9 @@ else:
 
 gen_type = input('Enter generate type(day | week) -> ')
 data = []
+offset_time = None
+_from = None
+_to = None
 for log_path in logs:
     log = open(log_path)
     lines = log.readlines()
@@ -52,7 +55,9 @@ for log_path in logs:
             dataOfLine = line.split('[sep]')
             time = parse(dataOfLine[2])
             if gen_type == 'day':
-                offset_time = datetime.date.today() + datetime.timedelta(days=-1)
+                if offset_time is None:
+                    offset_time = datetime.date.today() + datetime.timedelta(days=-1)
+                    print(offset_time.strftime("%Y%m%d日报"))
                 if time.day == offset_time.day and time.month == offset_time.month:
                     module = dataOfLine[1].split('://')
                     message = ''
@@ -69,10 +74,14 @@ for log_path in logs:
                         'time': time
                     })
             if gen_type == 'week':
-                now = datetime.datetime.now()
-                week = now.weekday()
-                _from = (now - datetime.timedelta(days=week - 7 * 0))
-                _to = (now + datetime.timedelta(days=6 - week + 7 * 0))
+                if _to is None or _from is None:
+                    now = datetime.datetime.now()
+                    now = datetime.datetime(now.year, now.month, now.day, 0, 0, 0, 0)
+                    week = now.weekday()
+                    _from = (now - datetime.timedelta(days=week - 7 * 0))
+                    now = datetime.datetime(now.year, now.month, now.day, 23, 59, 59, 0)
+                    _to = (now + datetime.timedelta(days=6 - week + 7 * 0))
+                    print(_to.strftime("%Y%m%d周报"))
                 module = dataOfLine[1].split('://')
                 message = ''
                 if len(module) == 2:
