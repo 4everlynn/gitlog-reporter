@@ -58,7 +58,7 @@ for log_path in logs:
                 if offset_time is None:
                     offset_time = datetime.date.today() + datetime.timedelta(days=-1)
                     print(offset_time.strftime("%Y%m%d日报"))
-                if time.day == offset_time.day and time.month == offset_time.month:
+                if time.year == offset_time.year and time.day == offset_time.day and time.month == offset_time.month:
                     module = dataOfLine[1].split('://')
                     message = ''
                     if len(module) == 2:
@@ -75,6 +75,7 @@ for log_path in logs:
                     })
             if gen_type == 'week':
                 if _to is None or _from is None:
+                    # now = datetime.datetime(2020, 5, 24)
                     now = datetime.datetime.now()
                     now = datetime.datetime(now.year, now.month, now.day, 0, 0, 0, 0)
                     week = now.weekday()
