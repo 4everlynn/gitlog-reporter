@@ -1,3 +1,5 @@
+## We have decided to no longer maintain this tool, and the function has been upgraded and integrated into [journal](https://github.com/4everlynn/journal)
+
 # Git Reporter generator
 
 [![Build Status](https://www.travis-ci.org/4everlynn/gitlog-reporter.svg?branch=master)](https://www.travis-ci.org/4everlynn/gitlog-reporter)
